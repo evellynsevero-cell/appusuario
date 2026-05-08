@@ -1,6 +1,7 @@
-package com.example.appusuario;
+package com.example.appusuario.user;
 
 
+import com.example.appusuario.user.model.Usuario;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

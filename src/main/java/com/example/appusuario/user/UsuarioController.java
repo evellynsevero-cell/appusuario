@@ -1,5 +1,7 @@
-package com.example.appusuario;
+package com.example.appusuario.user;
 
+import com.example.appusuario.user.model.UsuarioRequest;
+import com.example.appusuario.user.model.UsuarioResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +20,7 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<UsuarioResponse> criar(@Valid @RequestBody  UsuarioRequest request) {
+    public ResponseEntity<UsuarioResponse> criar(@Valid @RequestBody UsuarioRequest request) {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.criar(request));
     }

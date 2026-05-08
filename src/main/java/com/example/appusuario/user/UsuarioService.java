@@ -1,5 +1,9 @@
-package com.example.appusuario;
+package com.example.appusuario.user;
 
+import com.example.appusuario.exception.ResourceNotFoundException;
+import com.example.appusuario.user.model.Usuario;
+import com.example.appusuario.user.model.UsuarioRequest;
+import com.example.appusuario.user.model.UsuarioResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

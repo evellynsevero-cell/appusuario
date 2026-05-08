@@ -1,4 +1,4 @@
-package com.example.appusuario;
+package com.example.appusuario.exception;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @RestControllerAdvice // = @ControllerAdvice + @ResponseBody
 public class GlobalExceptionHandler {

@@ -1,4 +1,4 @@
-package com.example.appusuario;
+package com.example.appusuario.user.model;
 
 public class UsuarioResponse {
     private Long id;

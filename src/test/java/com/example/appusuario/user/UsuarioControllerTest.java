@@ -1,5 +1,8 @@
-package com.example.appusuario;
+package com.example.appusuario.user;
 
+import com.example.appusuario.exception.ResourceNotFoundException;
+import com.example.appusuario.user.model.UsuarioRequest;
+import com.example.appusuario.user.model.UsuarioResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
