@@ -39,7 +39,7 @@ public class UsuarioRepositoryTest {
     @Test
     void deveEncontrarUsuarioPorEmail() {
         // Arrange
-        Usuario usuario = new Usuario(null, "Evellyn", "eve@email.com");
+        Usuario usuario = new Usuario("Evellyn", "eve@email.com");
         usuarioRepository.save(usuario);
 
         // Act
@@ -52,7 +52,7 @@ public class UsuarioRepositoryTest {
     @Test
     void deveVerificarExistenciaPorEmail() {
         // Arrange
-        usuarioRepository.save(new Usuario(null, "Eve", "eve@email.com"));
+        usuarioRepository.save(new Usuario("Eve", "eve@email.com"));
 
         // Act & Assert
         assertThat(usuarioRepository.existsByEmail("eve@email.com")).isTrue();
