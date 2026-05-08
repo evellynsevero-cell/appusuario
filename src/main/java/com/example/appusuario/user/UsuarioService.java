@@ -1,21 +1,21 @@
-package com.example.appusuario;
+package com.example.appusuario.user;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.example.appusuario.exception.ResourceNotFoundException;
+import com.example.appusuario.user.model.Usuario;
+import com.example.appusuario.user.model.UsuarioRequest;
+import com.example.appusuario.user.model.UsuarioResponse;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
+@RequiredArgsConstructor
 public class UsuarioService {
-    private static final Logger log = LoggerFactory.getLogger(UsuarioService.class);
 
     private final UsuarioRepository usuarioRepository;
-
-    // Injeção do repository via construtor
-    public UsuarioService(UsuarioRepository usuarioRepository) {
-        this.usuarioRepository = usuarioRepository;
-    }
 
     public UsuarioResponse criar(UsuarioRequest request) {
         log.info("Criando usuário com e-mail: {}", request.getEmail());
@@ -36,8 +36,7 @@ public class UsuarioService {
     }
 
     public List<UsuarioResponse> listarTodos() {
-        List<Usuario> usuarios = usuarioRepository.findAll();
-        return usuarios.stream()
+        return usuarioRepository.findAll().stream()
                 .map(u -> new UsuarioResponse(u.getId(), u.getNome(), u.getEmail()))
                 .toList();
     }
@@ -48,6 +47,5 @@ public class UsuarioService {
         }
         usuarioRepository.deleteById(id);
         log.info("Usuário deletado com sucesso. ID: {}", id);
-        
     }
 }

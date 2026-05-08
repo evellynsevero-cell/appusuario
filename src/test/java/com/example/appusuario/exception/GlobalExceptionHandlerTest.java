@@ -1,5 +1,7 @@
-package com.example.appusuario;
+package com.example.appusuario.exception;
 
+import com.example.appusuario.user.UsuarioController;
+import com.example.appusuario.user.UsuarioService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

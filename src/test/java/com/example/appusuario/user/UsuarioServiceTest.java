@@ -1,5 +1,8 @@
-package com.example.appusuario;
+package com.example.appusuario.user;
 
+import com.example.appusuario.exception.ResourceNotFoundException;
+import com.example.appusuario.user.model.Usuario;
+import com.example.appusuario.user.model.UsuarioRequest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -27,7 +30,7 @@ class UsuarioServiceTest {
         @DisplayName("deve criar usuário com sucesso quando dados são válidos")
         void deveCriarComSucesso() {
             var request = new UsuarioRequest("Evellyn", "eve@email.com");
-            var usuario = new Usuario ( "Evellyn", "eve@email.com");
+            var usuario = new Usuario( "Evellyn", "eve@email.com");
             usuario.setId(1L);
 
             when(usuarioRepository.existsByEmail("eve@email.com")).thenReturn(false);
